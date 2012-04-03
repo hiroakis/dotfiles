@@ -90,6 +90,9 @@ nnoremap <Nul> :QuickRun<CR><ESC>
 nnoremap <C-z> :UniteWithBufferDir -buffer-name=files file<CR><ESC>
 nnoremap <C-q> :Unite file_mru<CR><ESC>
 
+" nerdtree
+nmap <C-n> :NERDTreeToggle<CR>
+
 "grep.vim
 command! -nargs=1 Grep :GrepBuffer <args>
 nnoremap <C-g> :GrepBuffer<Space><C-r><C-w>
@@ -129,12 +132,12 @@ let g:neocomplcache_enable_auto_select = 1
 " Define dictionary.
 let g:neocomplcache_dictionary_filetype_lists = {
    \  'default' : '',
-   \  'javascript' : '/Users/miche/.vim/dict/javascript/javascript.dict',
-   \  'php' : '/Users/miche/.vim/dict/php/php.dict'
+   \  'javascript' : '~/.vim/dict/javascript/javascript.dict',
+   \  'php' : '~/.vim/dict/php/php.dict'
    \  }
 
-"    \ 'ruby' : $DOTVIM.'/dict/ruby.dict'
-"   \  'python' : '/Users/miche/.vim/dict/python/complete-dict',
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><CR> pumvisible() ? neocomplcache#close_popup() : "<CR>"
 
 " Define keyword.
 if !exists('g:neocomplcache_keyword_patterns')
@@ -147,35 +150,10 @@ filetype on
 autocmd FileType python setl omnifunc=pythoncomplete#Complete
 autocmd FileType ruby setl omnifunc=rubycomplete#Complete
 autocmd FileType javascript setl omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType css setl omnifunc=csscomplete#CompleteCSS
+autocmd FileType html setl omnifunc=htmlcomplete#CompleteTags
+autocmd FileType xml setl omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php setl omnifunc=phpcomplete#CompletePHP
+autocmd FileType c setl omnifunc=ccomplete#Complete
 
 
-" autocmd FileType ruby :set dictionary=~/.vim/plugin/ruby.vim
-" autocmd FileType perl,cgi :set dictionary+=~/.vim/dict/perl_functions.dict
-
-
-" set complete+=k
-
-"filetype off
-"filetype plugin on
-"""""""
-
-"python
-"autocmd FileType python setl autoindent
-"autocmd FileType python setl smartindent
-"cinwords=if,elif,else,for,while,try,except,finally,def,class
-"autocmd FileType python setl expandtab tabstop=4 shiftwidth=4 softtabstop=4
-"autocmd FileType python let g:pydiction_location='/Users/miche/.vim/dict/python/complete-dict'
-"g:pydiction_location='/Users/miche/.vim/dict/python/complete-dict'
-
-"autocmd FileType javascript set
-"dictionary='/Users/miche/.vim/dict/javascript/javascript.dict'
-"autocmd FileType php set dictionary='/Users/miche/.vim/dict/php/php.dict'
-"set complete+=k
-
-""ruby
-"autocmd FileType ruby setl autoindent
-"autocmd FileType ruby setl smartindent
-"cinwords=if,elif,else,for,while,try,except,finally,def,class
-"autocmd FileType ruby setl expandtab tabstop=4 shiftwidth=4 softtabstop=4
-"

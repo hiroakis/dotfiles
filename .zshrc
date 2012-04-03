@@ -1,3 +1,5 @@
+# users generic .zshrc file for zsh(1)
+
 ## Environment variable configuration
 #
 # LANG
@@ -19,9 +21,9 @@ case ${UID} in
     PROMPT="%{${fg[white]}%}${HOST%%.*} ${PROMPT}"
   ;;
 *)
-  PROMPT="%{${fg[yellow]}%}%/%%%{${reset_color}%} "
-  PROMPT2="%{${fg[yellow]}%}%_%%%{${reset_color}%} "
-  SPROMPT="%{${fg[yellow]}%}%r is correct? [n,y,a,e]:%{${reset_color}%} "
+  PROMPT="%{${fg[cyan]}%}%/%%%{${reset_color}%} "
+  PROMPT2="%{${fg[cyan]}%}%_%%%{${reset_color}%} "
+  SPROMPT="%{${fg[cyan]}%}%r is correct? [n,y,a,e]:%{${reset_color}%} "
   [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && 
     PROMPT="%{${fg[white]}%}${HOST%%.*} ${PROMPT}"
   ;;
