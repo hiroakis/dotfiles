@@ -109,6 +109,12 @@ alias l="ls -1"
 alias grep='grep --color'
 alias rm='rm -i $@'
 
+# tmux
+alias tmux='tmuxx'
+alias tm='tmuxx'
+alias tma='tmux attach'
+alias tml='tmux list-window'
+
 stty -ixon -ixoff
 
 if [ -f /Applications/MacVim.app/Contents/MacOS/Vim ]; then

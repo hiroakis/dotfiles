@@ -1,12 +1,18 @@
 # .bashrc
 
-#if [ -f /bin/zsh ]; then
-#    exec /bin/zsh
-#fi
+if [ -f /bin/zsh ]; then
+    exec /bin/zsh
+fi
 
 alias ll='ls -la'
 alias l='ls -1'
 alias grep='grep --color'
+
+# tmux
+alias tmux='tmuxx'
+alias tm='tmuxx'
+alias tma='tmux attach'
+alias tml='tmux list-window'
 
 stty -ixon -ixoff
 
