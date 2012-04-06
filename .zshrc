@@ -96,11 +96,26 @@ alias where="command -v"
 alias j="jobs -l"
 
 case "${OSTYPE}" in
-freebsd*|darwin*)
+darwin*)
   alias ls="ls -G -w"
+  # tmux
+  if [ `which tmuxx` ]; then
+    alias tmux='tmuxx'
+    alias tm='tmuxx'
+    alias tma='tmux attach'
+    alias tml='tmux list-window'
+  fi
+  if [ -f /Applications/MacVim.app/Contents/MacOS/Vim ]; then
+    export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
+    alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim -u $HOME/.vimrc "$@"'
+    alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim -u $HOME/.vimrc "$@"'
+  fi
   ;;
 linux*)
   alias ls="ls --color"
+  ;;
+freebsd*)
+  alias ls="ls -G -w"
   ;;
 esac
 
@@ -109,20 +124,7 @@ alias l="ls -1"
 alias grep='grep --color'
 alias rm='rm -i $@'
 
-# tmux
-alias tmux='tmuxx'
-alias tm='tmuxx'
-alias tma='tmux attach'
-alias tml='tmux list-window'
-
 stty -ixon -ixoff
-
-if [ -f /Applications/MacVim.app/Contents/MacOS/Vim ]; then
-    export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
-    alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim -u $HOME/.vimrc "$@"'
-    alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim -u $HOME/.vimrc "$@"'
-fi
-
 
 ## terminal configuration
 #
