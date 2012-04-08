@@ -133,7 +133,8 @@ let g:neocomplcache_enable_auto_select = 1
 let g:neocomplcache_dictionary_filetype_lists = {
    \  'default' : '',
    \  'javascript' : '~/.vim/dict/javascript/javascript.dict',
-   \  'php' : '~/.vim/dict/php/php.dict'
+   \  'php' : '~/.vim/dict/php/php.dict',
+   \  'perl' : '~/.vim/dict/perl/perl.dict'
    \  }
 
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
