@@ -90,9 +90,6 @@ nnoremap <Nul> :QuickRun<CR><ESC>
 nnoremap <C-z> :UniteWithBufferDir -buffer-name=files file<CR><ESC>
 nnoremap <C-q> :Unite file_mru<CR><ESC>
 
-" nerdtree
-nmap <C-n> :NERDTreeToggle<CR>
-
 "grep.vim
 command! -nargs=1 Grep :GrepBuffer <args>
 nnoremap <C-g> :GrepBuffer<Space><C-r><C-w>
@@ -105,56 +102,4 @@ vmap cs <plug>NERDCommenterSexy
 vmap cc <plug>NERDCommenterComment
 vmap cx <plug>NERDCommenterUncomment
 nmap cx <plug>NERDCommenterUncomment
-
-""neocomplicache
-filetype on
-
-" Disable AutoComplPop.
-let g:acp_enable_at_startup = 0
-" Use neocomplcache.
-let g:neocomplcache_enable_at_startup = 1
-" Use smartcase.
-let g:neocomplcache_enable_smart_case = 1
-" Use camel case completion.
-let g:neocomplcache_enable_camel_case_completion = 1
-" Use underbar completion.
-let g:neocomplcache_enable_underbar_completion = 1
-" Set minimum syntax keyword length.
-let g:neocomplcache_min_syntax_length = 3
-" Set manual completion length.
-let g:neocomplcache_manual_completion_start_length = 0
-" Auto select first
-let g:neocomplcache_enable_auto_select = 1
-
-" Print caching percent in statusline.
-"let g:NeoComplCache_CachingPercentInStatusline = 1
-
-" Define dictionary.
-let g:neocomplcache_dictionary_filetype_lists = {
-   \  'default' : '',
-   \  'javascript' : '~/.vim/dict/javascript/javascript.dict',
-   \  'php' : '~/.vim/dict/php/php.dict',
-   \  'perl' : '~/.vim/dict/perl/perl.dict'
-   \  }
-
-inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr><CR> pumvisible() ? neocomplcache#close_popup() : "<CR>"
-
-" Define keyword.
-if !exists('g:neocomplcache_keyword_patterns')
-    let g:neocomplcache_keyword_patterns = {}
-endif
-let g:neocomplcache_keyword_patterns['default'] = '\v\h\w*'
-let g:neocomplcache_snippets_dir = '~/.vim/snippets'
-
-filetype on
-autocmd FileType python setl omnifunc=pythoncomplete#Complete
-autocmd FileType ruby setl omnifunc=rubycomplete#Complete
-autocmd FileType javascript setl omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType css setl omnifunc=csscomplete#CompleteCSS
-autocmd FileType html setl omnifunc=htmlcomplete#CompleteTags
-autocmd FileType xml setl omnifunc=xmlcomplete#CompleteTags
-autocmd FileType php setl omnifunc=phpcomplete#CompletePHP
-autocmd FileType c setl omnifunc=ccomplete#Complete
-
 
