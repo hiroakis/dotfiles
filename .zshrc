@@ -21,7 +21,7 @@ case ${UID} in
     PROMPT="%{${fg[white]}%}${HOST%%.*} ${PROMPT}"
   ;;
 *)
-  PROMPT="%{${fg[cyan]}%}%/%%%{${reset_color}%} "
+  PROMPT="%{${fg[yellow]}%}%1~ =%{${reset_color}%} "
   PROMPT2="%{${fg[cyan]}%}%_%%%{${reset_color}%} "
   SPROMPT="%{${fg[cyan]}%}%r is correct? [n,y,a,e]:%{${reset_color}%} "
   [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && 
