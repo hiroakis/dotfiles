@@ -9,6 +9,7 @@ mkdir -p ${USER_DIR}/.vim/autoload
 cd ${USER_DIR}/.vim/autoload
 git clone https://github.com/tpope/vim-pathogen.git
 
+mkdir -p ${USER_DIR}/.vim/bundle
 cd ${USER_DIR}/.vim/bundle
 git clone https://github.com/tpope/vim-surround.git
 git clone https://github.com/thinca/vim-quickrun.git
