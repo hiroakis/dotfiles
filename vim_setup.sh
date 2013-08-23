@@ -5,6 +5,7 @@ USER_DIR=~
 
 cp -p ${DOTFILES_DIR}/.vimrc ${USER_DIR}/
 
+mkdir -p ${USER_DIR}/.vim/autoload
 cd ${USER_DIR}/.vim/autoload
 git clone https://github.com/tpope/vim-pathogen.git
 
