@@ -17,3 +17,6 @@ git clone https://github.com/Shougo/unite.vim.git
 git clone https://github.com/vim-scripts/grep.vim.git
 git clone https://github.com/scrooloose/nerdcommenter.git
 
+mv ${USER_DIR}/.vim/autoload/vim-pathogen/autoload/pathogen.vim ${USER_DIR}/.vim/autoload/
+
+
