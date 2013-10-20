@@ -103,3 +103,5 @@ vmap cc <plug>NERDCommenterComment
 vmap cx <plug>NERDCommenterUncomment
 nmap cx <plug>NERDCommenterUncomment
 
+"dash
+nmap <C-s> :Dash<Space><C-r><C-w>

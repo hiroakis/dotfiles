@@ -16,6 +16,8 @@ git clone https://github.com/thinca/vim-quickrun.git
 git clone https://github.com/Shougo/unite.vim.git
 git clone https://github.com/vim-scripts/grep.vim.git
 git clone https://github.com/scrooloose/nerdcommenter.git
+git clone https://github.com/rizzatti/funcoo.vim.git
+git clone https://github.com/rizzatti/dash.vim.git
 
 mv ${USER_DIR}/.vim/autoload/vim-pathogen/autoload/pathogen.vim ${USER_DIR}/.vim/autoload/
 
