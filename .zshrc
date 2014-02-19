@@ -170,14 +170,16 @@ compdef mosh=ssh
 
 export PYENV_ROOT="${HOME}/.pyenv"
 if [ -d "${PYENV_ROOT}" ]; then
-    export PATH=${PYENV_ROOT}/bin:$PATH
+    export PATH=${PYENV_ROOT}/shims:${PYENV_ROOT}/bin:$PATH
     eval "$(pyenv init -)"
 fi
 
 export RBENV_ROOT="${HOME}/.rbenv"
 if [ -d "${RBENV_ROOT}" ]; then
-    export PATH=$PATH:$HOME/.rbenv/bin
+    export PATH=${RBENV_ROOT}/shims:${RBENV_ROOT}/bin:$PATH
     eval "$(rbenv init -)"
 fi
 
 export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
+export GOHOME=/usr/local
+export PATH=$PATH:$GOHOME/bin

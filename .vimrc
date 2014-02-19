@@ -7,7 +7,7 @@ set autoindent          "オートインデントを有効
 set smartindent         "スマートインデントを有効
 set nobackup            "バックアップファイルを作らない
 set noswapfile          "スワップファイルを作らない
-set clipboard+=unnamed  "OS⇔vim間でコピペを可能にする
+" set clipboard+=unnamed  "OS⇔vim間でコピペを可能にする
 set backspace=2         "<BS>でインデントや改行を削除できるようにする
 set title               "ファイル名を表示
 set number              "行番号を表示
@@ -78,9 +78,25 @@ endif
 "plugin
 "=========================================================
 
-"vim-pathogen
-call pathogen#incubate()
-call pathogen#helptags()
+"NeoBundle
+if has('vim_starting')
+   set nocompatible
+   set runtimepath+=~/.vim/bundle/neobundle.vim/
+ endif
+call neobundle#rc(expand('~/.vim/bundle/'))
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+
+NeoBundle 'tpope/vim-surround.git'
+NeoBundle 'thinca/vim-quickrun.git'
+NeoBundle 'Shougo/unite.vim.git'
+NeoBundle 'vim-scripts/grep.vim.git'
+NeoBundle 'scrooloose/nerdcommenter.git'
+NeoBundle 'rizzatti/funcoo.vim.git'
+NeoBundle 'rizzatti/dash.vim.git'
+
+NeoBundleCheck
+filetype plugin indent on
 
 "QuickRun
 " nnoremap <C-Space> :QuickRun<CR><ESC>
