@@ -168,19 +168,31 @@ esac
 ## mosh
 compdef mosh=ssh
 
+## complete hostname from known_hosts
+function print_known_hosts (){
+  if [ -f $HOME/.ssh/known_hosts ]; then
+    cat $HOME/.ssh/known_hosts | tr ',' ' ' | cut -d' ' -f1
+  fi  
+}
+_cache_hosts=($( print_known_hosts ))
+
+## pyenv
 export PYENV_ROOT="${HOME}/.pyenv"
 if [ -d "${PYENV_ROOT}" ]; then
     export PATH=${PYENV_ROOT}/shims:${PYENV_ROOT}/bin:$PATH
     eval "$(pyenv init -)"
 fi
 
+## rbenv
 export RBENV_ROOT="${HOME}/.rbenv"
 if [ -d "${RBENV_ROOT}" ]; then
     export PATH=${RBENV_ROOT}/shims:${RBENV_ROOT}/bin:$PATH
     eval "$(rbenv init -)"
 fi
 
-export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
+## go
 export GOHOME=/usr/local
 export GOENVTARGET=$HOME/.goenv
-export PATH=$PATH:$GOHOME/bin:$GOENVTARGET
+export PATH=$PATH:$GOENVTARGET
+
+export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
