@@ -182,4 +182,5 @@ fi
 
 export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
 export GOHOME=/usr/local
-export PATH=$PATH:$GOHOME/bin
+export GOENVTARGET=$HOME/.goenv
+export PATH=$PATH:$GOHOME/bin:$GOENVTARGET
