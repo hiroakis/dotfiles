@@ -46,6 +46,10 @@ syntax on               "シンタックスオン
 "=========================================================
 "検索文字のハイライトを<ESC><ESC>で消す
 nmap <ESC><ESC> :nohlsearch<CR><ESC>
+nmap <C-n> :set nonu
+nmap <C-p> :set paste
+nmap <S-n> :set nu
+nmap <S-p> :set nopaste
 "ウィンドウ移動のショートカット
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
