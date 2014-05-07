@@ -5,6 +5,9 @@ USER_DIR=~
 
 cp -p ${DOTFILES_DIR}/.vimrc ${USER_DIR}/
 
+mkdir -p ${USER_DIR}/.vim/indent
+cp -p ${DOTFILES_DIR}/.vim/indent/* ${USER_DIR}/.vim/indent/
+
 mkdir -p ${USER_DIR}/.vim/bundle
 cd ${USER_DIR}/.vim/bundle
 git clone https://github.com/Shougo/neobundle.vim
