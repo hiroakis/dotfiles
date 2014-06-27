@@ -193,6 +193,14 @@ fi
 ## go
 export GOHOME=/usr/local
 export GOENVTARGET=$HOME/.goenv
-export PATH=$PATH:$GOENVTARGET
+export PATH=$PATH:$GOENVTARGET/bin
 
 export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
+
+export DOCKER_HOST=tcp://localhost:4243
+
+if [ -d "${HOME}/google-cloud-sdk" ]; then
+    export CLOUDSDK_PYTHON=/usr/bin/python
+    source $HOME/google-cloud-sdk/path.zsh.inc
+    source $HOME/google-cloud-sdk/completion.zsh.inc
+fi
