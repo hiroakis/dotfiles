@@ -195,12 +195,32 @@ export GOHOME=/usr/local
 export GOENVTARGET=$HOME/.goenv
 export PATH=$PATH:$GOENVTARGET/bin
 
+## MySQL
 export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
 
+## Docker
 export DOCKER_HOST=tcp://localhost:4243
 
+## Google cloud sdk
 if [ -d "${HOME}/google-cloud-sdk" ]; then
     export CLOUDSDK_PYTHON=/usr/bin/python
     source $HOME/google-cloud-sdk/path.zsh.inc
     source $HOME/google-cloud-sdk/completion.zsh.inc
 fi
+
+## peco
+function peco-select-history() {
+    local tac
+    if which tac > /dev/null; then
+        tac="tac"
+    else
+        tac="tail -r"
+    fi
+    BUFFER=$(history -n 1 | \
+        eval $tac | \
+        peco --query "$LBUFFER")
+    CURSOR=$#BUFFER
+    zle clear-screen
+}
+zle -N peco-select-history
+bindkey '^r' peco-select-history
