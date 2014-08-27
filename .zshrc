@@ -224,3 +224,9 @@ function peco-select-history() {
 }
 zle -N peco-select-history
 bindkey '^r' peco-select-history
+
+function gim() {
+    vim `git ls-files | peco`
+}
+
+REPORTTIME=1
