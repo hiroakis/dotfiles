@@ -87,7 +87,7 @@ if has('vim_starting')
    set nocompatible
    set runtimepath+=~/.vim/bundle/neobundle.vim/
  endif
-call neobundle#rc(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 
@@ -98,6 +98,8 @@ NeoBundle 'vim-scripts/grep.vim.git'
 NeoBundle 'scrooloose/nerdcommenter.git'
 NeoBundle 'rizzatti/funcoo.vim.git'
 NeoBundle 'rizzatti/dash.vim.git'
+
+call neobundle#end()
 
 NeoBundleCheck
 filetype plugin indent on
