@@ -99,12 +99,6 @@ case "${OSTYPE}" in
 darwin*)
   alias ls="ls -G -w"
   # tmux
-  if [ `which tmuxx` ]; then
-    alias tmux='tmuxx'
-    alias tm='tmuxx'
-    alias tma='tmux attach'
-    alias tml='tmux list-window'
-  fi
   if [ -f /Applications/MacVim.app/Contents/MacOS/Vim ]; then
     export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
     alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim -u $HOME/.vimrc "$@"'
