@@ -98,6 +98,7 @@ NeoBundle 'vim-scripts/grep.vim.git'
 NeoBundle 'scrooloose/nerdcommenter.git'
 NeoBundle 'rizzatti/funcoo.vim.git'
 NeoBundle 'rizzatti/dash.vim.git'
+NeoBundle 'kchmck/vim-coffee-script'
 
 call neobundle#end()
 
