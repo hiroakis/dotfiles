@@ -99,6 +99,7 @@ NeoBundle 'scrooloose/nerdcommenter.git'
 NeoBundle 'rizzatti/funcoo.vim.git'
 NeoBundle 'rizzatti/dash.vim.git'
 NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'fatih/vim-go'
 
 call neobundle#end()
 
